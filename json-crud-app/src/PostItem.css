@@ -1,0 +1,35 @@
+.post {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.post-header h2 {
+  cursor: pointer;
+  color: #555555;
+  margin: 0;
+}
+
+.post-header h2:hover {
+  color: #174b83;
+}
+
+.post p {
+  margin-bottom: 10px;
+}
+
+.post-header svg {
+  cursor: pointer;
+  color: #dc3545;
+}
+
+.post-header svg:hover {
+  color: #c82333;
+}
