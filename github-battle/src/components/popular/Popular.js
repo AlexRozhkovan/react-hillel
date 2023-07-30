@@ -6,8 +6,8 @@ import Loader from "../Loader";
 import { useSearchParams } from "react-router-dom";
 
 const Popular = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const selectedLanguage = searchParams.get("lang") || "All";
+  const [searchParams, setSearchParams] = useSearchParams("lang=All");
+  const selectedLanguage = searchParams.get("lang");
   const [loading, setLoading] = useState(false);
   const [repos, setRepos] = useState([]);
   const [error, setError] = useState(null);
