@@ -2,8 +2,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Popular from "./components/popular/Popular";
-import Battle from "./components/Battle";
+import Battle from "./components/battle/Battle";
 import Layout from "./components/Layout";
+import Results from "./components/battle/Results";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "battle",
         element: <Battle />,
+      },
+      {
+        path: "battle/results",
+        element: <Results />,
       },
       {
         path: "*",

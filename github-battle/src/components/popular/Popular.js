@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { fetchPopularRepos } from "../../github-api";
+import { fetchPopularRepos } from "../../utils/github-api";
 import PopularList from "./PopularList";
 import LanguageTabs from "./LanguageTabs";
 import Loader from "../Loader";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Popular = () => {
   const [searchParams, setSearchParams] = useSearchParams("lang=All");

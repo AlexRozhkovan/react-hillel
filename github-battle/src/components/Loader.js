@@ -1,14 +1,7 @@
 import { ThreeCircles } from "react-loader-spinner";
 
 const Loader = () => (
-  <div
-    style={{
-      position: "fixed",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-    }}
-  >
+  <div className="middle">
     <ThreeCircles
       height="65"
       width="65"
