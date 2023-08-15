@@ -1,7 +1,6 @@
 import PlayerPreview from "./PlayerPreview";
 
 const Profile = ({ info }) => {
-  console.log(info);
   return (
     <PlayerPreview userName={info.login} avatar={info.avatar_url}>
       <ul className="space-list-items">

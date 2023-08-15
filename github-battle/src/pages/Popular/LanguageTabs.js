@@ -1,8 +1,19 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { getRepos } from "../../redux/popular/popular.thunk";
+import { useDispatch } from "react-redux";
 
 const languages = ["All", "Javascript", "Ruby", "Java", "CSS", "Python"];
 
-const LanguageTabs = memo(({ selectedLanguage, setSearchParams, loading }) => {
+const LanguageTabs = memo(({ loading }) => {
+  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams("lang=All");
+  const selectedLanguage = searchParams.get("lang");
+
+  useEffect(() => {
+    dispatch(getRepos(selectedLanguage));
+  }, [selectedLanguage, dispatch]);
+
   const setStyles = (loading) => {
     return loading
       ? { cursor: "default", userSelect: "none" }

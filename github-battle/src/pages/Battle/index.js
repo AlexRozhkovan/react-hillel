@@ -16,16 +16,13 @@ const Battle = () => {
     playerTwoName: "",
   });
 
-  const handeSublit = useCallback(
-    (id, userName) => {
-      setPlayers((prevState) => ({
-        ...prevState,
-        [`${id}Name`]: userName,
-        [`${id}Image`]: `https://github.com/${userName}.png?size200`,
-      }));
-    },
-    [players]
-  );
+  const handeSublit = useCallback((id, userName) => {
+    setPlayers((prevState) => ({
+      ...prevState,
+      [`${id}Name`]: userName,
+      [`${id}Image`]: `https://github.com/${userName}.png?size=200`,
+    }));
+  }, []);
 
   const handleReset = (id) => {
     setPlayers((prevState) => ({

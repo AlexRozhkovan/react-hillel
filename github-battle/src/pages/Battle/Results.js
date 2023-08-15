@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { battle } from "../../utils/github-api";
+import { battle } from "../../app/github-api";
 import queryString from "query-string";
 import Player from "./Player";
-import Loader from "../Loader";
+import Loader from "../../styles/Loader";
 
 const Results = () => {
   const [winner, setWinner] = useState(null);
@@ -18,13 +18,13 @@ const Results = () => {
     const players = queryString.parse(location.search);
 
     battle([players.playerOneName, players.playerTwoName])
-      .then((players) => {
-        setWinner(players[0]);
-        setLoser(players[1]);
+      .then(([winner, loser]) => {
+        setWinner(winner);
+        setLoser(loser);
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [location.search]);
 
   if (error) {
     console.log(error.message);
