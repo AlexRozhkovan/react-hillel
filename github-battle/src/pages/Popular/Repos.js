@@ -15,11 +15,11 @@ const Repos = () => {
         repos.map((repo, index) => {
           return (
             <RepoItem
-              key={repo.id}
               index={index}
               avatar={repo.owner.avatar_url}
               link={repo.html_url}
-              name={repo.login}
+              name={repo.name}
+              login={repo.owner.login}
               stargazers_count={repo.stargazers_count}
             />
           );

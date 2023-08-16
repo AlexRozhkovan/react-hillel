@@ -1,30 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { battle } from "../../app/github-api";
 import queryString from "query-string";
 import Player from "./Player";
 import Loader from "../../styles/Loader";
+import { useDispatch, useSelector } from "react-redux";
+import { getBattleResults } from "../../redux/battle/result.thunk";
 
 const Results = () => {
-  const [winner, setWinner] = useState(null);
-  const [loser, setLoser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const loading = useSelector((state) => state.result.loading);
+  const error = useSelector((state) => state.result.error);
 
+  const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     const players = queryString.parse(location.search);
-
-    battle([players.playerOneName, players.playerTwoName])
-      .then(([winner, loser]) => {
-        setWinner(winner);
-        setLoser(loser);
-      })
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  }, [location.search]);
+    dispatch(getBattleResults(players.playerOneName, players.playerTwoName));
+  }, [dispatch, location.search]);
 
   if (error) {
     console.log(error.message);
@@ -44,12 +37,8 @@ const Results = () => {
         <Loader />
       ) : (
         <>
-          <Player
-            label="Winner"
-            score={winner.score}
-            profile={winner.profile}
-          />
-          <Player label="Loser" score={loser.score} profile={loser.profile} />
+          <Player label="Winner" />
+          <Player label="Loser" />
         </>
       )}
     </div>

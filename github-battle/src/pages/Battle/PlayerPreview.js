@@ -1,4 +1,6 @@
-const PlayerPreview = ({ avatar, userName, children }) => {
+import { memo } from "react";
+
+const PlayerPreview = memo(({ avatar, userName, children }) => {
   return (
     <div>
       <div className="column">
@@ -8,6 +10,6 @@ const PlayerPreview = ({ avatar, userName, children }) => {
       {children}
     </div>
   );
-};
+});
 
 export default PlayerPreview;

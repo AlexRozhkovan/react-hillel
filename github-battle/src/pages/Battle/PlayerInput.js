@@ -1,10 +1,22 @@
-import { memo, useState } from "react";
+import React, { memo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setPlayerName,
+  setPlayerImage,
+} from "../../redux/battle/battle.actions";
 
-const PlayerInput = memo(({ id, label, onSubmit }) => {
-  const [userName, setUserName] = useState("");
+const PlayerInput = memo(({ id, label }) => {
+  const dispatch = useDispatch();
+  const playerName = useSelector((state) => state.battle[id].name);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(id, userName);
+    dispatch(
+      setPlayerImage({
+        id,
+        image: `https://github.com/${playerName}.png?size=200`,
+      })
+    );
   };
 
   return (
@@ -17,10 +29,12 @@ const PlayerInput = memo(({ id, label, onSubmit }) => {
         type="text"
         autoComplete="off"
         placeholder="GitHub UserName"
-        value={userName}
-        onChange={(event) => setUserName(event.target.value)}
+        onChange={(event) => {
+          const name = event.target.value;
+          dispatch(setPlayerName({ id, name }));
+        }}
       />
-      <button className="button" type="submit" disabled={!userName.length}>
+      <button className="button" type="submit" disabled={!playerName}>
         Submit
       </button>
     </form>

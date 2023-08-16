@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import PlayerPreview from "./PlayerPreview";
+import { memo } from "react";
 
-const Profile = ({ info }) => {
+const Profile = memo(({ player }) => {
+  const info = useSelector((state) => state.result[player].profile);
   return (
     <PlayerPreview userName={info.login} avatar={info.avatar_url}>
       <ul className="space-list-items">
@@ -19,6 +22,6 @@ const Profile = ({ info }) => {
       </ul>
     </PlayerPreview>
   );
-};
+});
 
 export default Profile;
