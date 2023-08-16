@@ -4,7 +4,6 @@ import RepoItem from "./RepoItem";
 const Repos = () => {
   const repos = useSelector((state) => state.popular.repos);
   const error = useSelector((state) => state.popular.error);
-
   return error ? (
     <p>{error}</p>
   ) : (
@@ -15,6 +14,7 @@ const Repos = () => {
         repos.map((repo, index) => {
           return (
             <RepoItem
+              key={repo.id}
               index={index}
               avatar={repo.owner.avatar_url}
               link={repo.html_url}
