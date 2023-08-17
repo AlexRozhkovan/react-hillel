@@ -1,33 +1,33 @@
-import { createBrowserRouter } from "react-router-dom";
-import Layout from "../pages/Layout";
-import Home from "../pages/Home";
-import Popular from "../pages/Popular/index";
-import Battle from "../pages/Battle/index";
-import Results from "../pages/Battle/Results";
+import { createBrowserRouter } from 'react-router-dom';
+import Layout from '../pages/Layout';
+import Home from '../pages/Home';
+import Popular from '../pages/Popular/index';
+import Battle from '../pages/Battle/index';
+import Results from '../pages/Battle/Results';
 
 export const router = createBrowserRouter([
   {
-    path: "",
+    path: '',
     element: <Layout />,
     children: [
       {
-        path: "",
+        path: '',
         element: <Home />,
       },
       {
-        path: "popular",
+        path: 'popular',
         element: <Popular />,
       },
       {
-        path: "battle",
+        path: 'battle',
         element: <Battle />,
       },
       {
-        path: "battle/results",
+        path: 'battle/results',
         element: <Results />,
       },
       {
-        path: "*",
+        path: '*',
         element: <h3>Error!</h3>,
       },
     ],

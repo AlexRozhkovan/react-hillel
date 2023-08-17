@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import { useDispatch } from "react-redux";
-import { resetPlayer } from "../../redux/battle/battle.actions";
+import React, { memo } from 'react';
+import { useDispatch } from 'react-redux';
+import { resetPlayer } from '../../redux/battle/battle.actions';
 
 const ResetPlayerButton = memo(({ id }) => {
   const dispatch = useDispatch();

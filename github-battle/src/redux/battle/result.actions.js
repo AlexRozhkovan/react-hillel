@@ -1,7 +1,7 @@
 export const RESULT = {
-  SET_WINNER: "SET_WINNER",
-  SET_LOSER: "SET_LOSER",
-  SET_ERROR: "SET_ERROR",
+  SET_WINNER: 'SET_WINNER',
+  SET_LOSER: 'SET_LOSER',
+  SET_ERROR: 'SET_ERROR',
 };
 
 export const setWinner = (payload) => ({

@@ -1,4 +1,4 @@
-import { ThreeCircles } from "react-loader-spinner";
+import { ThreeCircles } from 'react-loader-spinner';
 
 const Loader = () => (
   <div className="middle">

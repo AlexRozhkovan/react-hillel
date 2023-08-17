@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
-import PlayerPreview from "./PlayerPreview";
-import { memo } from "react";
+import { useSelector } from 'react-redux';
+import PlayerPreview from './PlayerPreview';
+import { memo } from 'react';
 
 const Profile = memo(({ player }) => {
   const info = useSelector((state) => state.result[player].profile);

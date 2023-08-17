@@ -2,8 +2,8 @@ import {
   getReposLoading,
   getReposSuccess,
   getReposFailure,
-} from "./popular.actions";
-import { fetchPopularRepos } from "../../app/github-api";
+} from './popular.actions';
+import { fetchPopularRepos } from '../../app/github-api';
 
 export const getRepos = (selectedLanguage) => async (dispatch) => {
   dispatch(getReposLoading());

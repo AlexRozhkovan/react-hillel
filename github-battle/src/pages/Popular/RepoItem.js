@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 const RepoItem = memo(
   ({ index, avatar, link, name, login, stargazers_count }) => {

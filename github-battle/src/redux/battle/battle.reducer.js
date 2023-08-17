@@ -1,12 +1,12 @@
-import { BATTLE } from "./battle.actions";
+import { BATTLE } from './battle.actions';
 const initialState = {
   playerOne: {
     image: null,
-    name: "",
+    name: '',
   },
   playerTwo: {
     image: null,
-    name: "",
+    name: '',
   },
 };
 

@@ -1,9 +1,9 @@
-import React, { memo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { memo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   setPlayerName,
   setPlayerImage,
-} from "../../redux/battle/battle.actions";
+} from '../../redux/battle/battle.actions';
 
 const PlayerInput = memo(({ id, label }) => {
   const dispatch = useDispatch();

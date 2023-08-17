@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import queryString from "query-string";
-import Player from "./Player";
-import Loader from "../../styles/Loader";
-import { useDispatch, useSelector } from "react-redux";
-import { getBattleResults } from "../../redux/battle/result.thunk";
+import { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import queryString from 'query-string';
+import Player from './Player';
+import Loader from '../../styles/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBattleResults } from '../../redux/battle/result.thunk';
 
 const Results = () => {
   const loading = useSelector((state) => state.result.loading);

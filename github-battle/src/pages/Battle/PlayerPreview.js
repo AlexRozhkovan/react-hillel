@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 const PlayerPreview = memo(({ avatar, userName, children }) => {
   return (

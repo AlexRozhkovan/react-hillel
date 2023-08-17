@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import RepoItem from "./RepoItem";
+import { useSelector } from 'react-redux';
+import RepoItem from './RepoItem';
 
 const Repos = () => {
   const repos = useSelector((state) => state.popular.repos);

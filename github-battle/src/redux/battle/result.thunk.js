@@ -1,5 +1,5 @@
-import { battle } from "../../app/github-api";
-import { setError, setLoser, setWinner } from "./result.actions";
+import { battle } from '../../app/github-api';
+import { setError, setLoser, setWinner } from './result.actions';
 
 export const getBattleResults = (playerOne, playerTwo) => (dispatch) => {
   battle([playerOne, playerTwo])

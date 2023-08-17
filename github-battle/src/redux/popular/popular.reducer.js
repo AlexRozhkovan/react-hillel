@@ -1,4 +1,4 @@
-import { POPULAR } from "./popular.actions";
+import { POPULAR } from './popular.actions';
 const initialState = {
   loading: false,
   repos: [],

@@ -1,4 +1,4 @@
-import { RESULT } from "./result.actions";
+import { RESULT } from './result.actions';
 
 const initialState = {
   loading: true,

@@ -1,14 +1,14 @@
-import { memo, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import { getRepos } from "../../redux/popular/popular.thunk";
-import { useDispatch } from "react-redux";
+import { memo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { getRepos } from '../../redux/popular/popular.thunk';
+import { useDispatch } from 'react-redux';
 
-const languages = ["All", "Javascript", "Ruby", "Java", "CSS", "Python"];
+const languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
 
 const LanguageTabs = memo(({ loading }) => {
   const dispatch = useDispatch();
-  const [searchParams, setSearchParams] = useSearchParams("lang=All");
-  const selectedLanguage = searchParams.get("lang");
+  const [searchParams, setSearchParams] = useSearchParams('lang=All');
+  const selectedLanguage = searchParams.get('lang');
 
   useEffect(() => {
     dispatch(getRepos(selectedLanguage));
@@ -16,8 +16,8 @@ const LanguageTabs = memo(({ loading }) => {
 
   const setStyles = (loading) => {
     return loading
-      ? { cursor: "default", userSelect: "none" }
-      : { cursor: "pointer", userSelect: "auto" };
+      ? { cursor: 'default', userSelect: 'none' }
+      : { cursor: 'pointer', userSelect: 'auto' };
   };
 
   return (
@@ -26,7 +26,7 @@ const LanguageTabs = memo(({ loading }) => {
         <li
           key={index}
           style={{
-            color: selectedLanguage === language ? "#d0021b" : "#000000",
+            color: selectedLanguage === language ? '#d0021b' : '#000000',
             ...setStyles(loading),
           }}
           onClick={() => {

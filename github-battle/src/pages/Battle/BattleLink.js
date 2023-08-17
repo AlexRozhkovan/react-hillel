@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const BattleLink = () => {
   const playerOneName = useSelector((state) => state.battle.playerOne.name);
@@ -8,7 +8,7 @@ const BattleLink = () => {
     <Link
       className="button"
       to={{
-        pathname: "results",
+        pathname: 'results',
         search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`,
       }}
     >
