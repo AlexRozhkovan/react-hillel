@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux';
 import RepoItem from './RepoItem';
+import {FC, ReactElement} from "react";
 
-const Repos = () => {
-  const repos = useSelector((state) => state.popular.repos);
-  const error = useSelector((state) => state.popular.error);
+const Repos:FC = ():ReactElement => {
+  const repos:[] = useSelector((state:any) => state.popular.repos);
+  const error:string | null = useSelector((state:any) => state.popular.error);
   return error ? (
     <p>{error}</p>
   ) : (
@@ -11,7 +12,7 @@ const Repos = () => {
       {!repos.length ? (
         <p>Ooops...</p>
       ) : (
-        repos.map((repo, index) => {
+        repos.map((repo:any, index:number) => {
           return (
             <RepoItem
               key={repo.id}

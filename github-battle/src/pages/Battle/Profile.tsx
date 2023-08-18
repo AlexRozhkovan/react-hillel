@@ -1,9 +1,13 @@
 import { useSelector } from 'react-redux';
 import PlayerPreview from './PlayerPreview';
-import { memo } from 'react';
+import {FC, memo, ReactElement} from 'react';
 
-const Profile = memo(({ player }) => {
-  const info = useSelector((state) => state.result[player].profile);
+interface IProps{
+    player: string
+}
+
+const Profile:FC<IProps> = memo(({ player }):ReactElement => {
+  const info = useSelector((state:any) => state.result[player].profile);
   return (
     <PlayerPreview userName={info.login} avatar={info.avatar_url}>
       <ul className="space-list-items">

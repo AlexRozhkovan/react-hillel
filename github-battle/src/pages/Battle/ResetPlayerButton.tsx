@@ -1,11 +1,17 @@
-import React, { memo } from 'react';
+import React, {FC, memo, ReactElement} from 'react';
 import { useDispatch } from 'react-redux';
 import { resetPlayer } from '../../redux/battle/battle.actions';
+import {Dispatch} from "redux";
 
-const ResetPlayerButton = memo(({ id }) => {
-  const dispatch = useDispatch();
+interface IProps {
+  id:string
+}
 
-  const handleReset = () => {
+const ResetPlayerButton:FC<IProps> = memo(
+    ({ id }):ReactElement => {
+  const dispatch:Dispatch = useDispatch();
+
+  const handleReset = ():void => {
     dispatch(resetPlayer({ id }));
   };
 

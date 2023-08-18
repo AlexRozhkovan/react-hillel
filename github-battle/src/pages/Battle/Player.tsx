@@ -1,8 +1,12 @@
 import { useSelector } from 'react-redux';
 import Profile from './Profile';
+import {FC, ReactElement} from "react";
 
-const Player = ({ label }) => {
-  const score = useSelector((state) => state.result[label.toLowerCase()].score);
+interface IProps{
+    label:string
+}
+const Player:FC<IProps> = ({ label }): ReactElement => {
+  const score:number = useSelector((state:any) => state.result[label.toLowerCase()].score);
   return (
     <div>
       <h1 className="header">{label}</h1>

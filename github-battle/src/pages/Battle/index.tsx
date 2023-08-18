@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {FC, ReactElement} from 'react';
 import { useSelector } from 'react-redux';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 import ResetPlayerButton from './ResetPlayerButton';
 import BattleLink from './BattleLink';
 
-const Battle = () => {
-  const players = useSelector((state) => state.battle);
-  const playerOneId = 'playerOne';
-  const playerTwoId = 'playerTwo';
+const Battle:FC = ():ReactElement => {
+  const players:any = useSelector((state:any) => state.battle);
+  const playerOneId:string = 'playerOne';
+  const playerTwoId:string = 'playerTwo';
   return (
     <div>
       <div className="row">

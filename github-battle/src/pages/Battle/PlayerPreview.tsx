@@ -1,6 +1,11 @@
-import { memo } from 'react';
+import {FC, memo, ReactElement} from 'react';
+interface IProps {
+    avatar: string,
+    userName: string,
+    children: ReactElement
+}
 
-const PlayerPreview = memo(({ avatar, userName, children }) => {
+const PlayerPreview:FC<IProps> = memo(({ avatar, userName, children }) => {
   return (
     <div>
       <div className="column">

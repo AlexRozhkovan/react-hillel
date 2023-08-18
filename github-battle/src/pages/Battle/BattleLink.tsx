@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {FC, ReactElement} from "react";
 
-const BattleLink = () => {
-  const playerOneName = useSelector((state) => state.battle.playerOne.name);
-  const playerTwoName = useSelector((state) => state.battle.playerTwo.name);
+const BattleLink:FC = ():ReactElement => {
+  const playerOneName:string = useSelector((state:any) => state.battle.playerOne.name);
+  const playerTwoName:string = useSelector((state:any) => state.battle.playerTwo.name);
   return (
     <Link
       className="button"

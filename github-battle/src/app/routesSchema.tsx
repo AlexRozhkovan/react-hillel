@@ -1,8 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom';
-import Layout from '../pages/Layout';
-import Home from '../pages/Home';
-import Popular from '../pages/Popular/index';
-import Battle from '../pages/Battle/index';
+import { RouteObject, createBrowserRouter } from 'react-router-dom';
+import Layout from '../pages/Layout/Layout';
+import Home from '../pages/Home/Home';
+import Popular from '../pages/Popular';
+import Battle from '../pages/Battle';
 import Results from '../pages/Battle/Results';
 
 export const router = createBrowserRouter([
@@ -32,4 +32,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+] as RouteObject[]);
