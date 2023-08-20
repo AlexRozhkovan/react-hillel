@@ -20,12 +20,7 @@ const Results: FC = (): ReactElement => {
     useEffect((): void => {
         const {playerOneName, playerTwoName} = queryString.parse(location.search);
         // @ts-ignore
-        dispatch(
-            getBattleResults({
-                playerOneName: String(playerOneName),
-                playerTwoName: String(playerTwoName),
-            })
-        );
+        dispatch(getBattleResults({playerOneName: String(playerOneName), playerTwoName: String(playerTwoName)}));
     }, [dispatch, location.search]);
 
     if (error) {
