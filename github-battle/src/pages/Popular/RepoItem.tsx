@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const RepoItem: FC<IProps> = memo(
-    ({index, avatar, link, name, login, stargazers_count}): ReactElement => {
+    ({index, avatar, link, name, login, stargazers_count}: IProps): ReactElement => {
         return (
             <li className="repo-item">
                 <div className="repo-rank">#{index + 1}</div>

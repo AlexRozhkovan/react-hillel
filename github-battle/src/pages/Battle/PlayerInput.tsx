@@ -1,18 +1,15 @@
 import React, {ChangeEvent, FC, FormEvent, memo, ReactElement} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {
-    setPlayerName,
-    setPlayerImage,
-} from '../../redux/battle/battle.actions';
-import {Dispatch} from "redux";
+import {setPlayerImage, setPlayerName} from '../../redux/battle/battle.slice';
+import {AppDispatch} from '../../redux/store';
 
 interface IProps {
-    id: string,
-    label: string
+    id: string;
+    label: string;
 }
 
-const PlayerInput: FC<IProps> = memo(({id, label}): ReactElement => {
-    const dispatch: Dispatch = useDispatch();
+const PlayerInput: FC<IProps> = memo(({id, label}: IProps): ReactElement => {
+    const dispatch: AppDispatch = useDispatch();
     const playerName: string = useSelector((state: any) => state.battle[id].name);
 
     const handleSubmit = (event: FormEvent): void => {

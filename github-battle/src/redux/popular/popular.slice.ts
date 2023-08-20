@@ -1,31 +1,36 @@
+import {createSlice, PayloadAction, Slice} from '@reduxjs/toolkit';
 
-import {createSlice, Slice} from '@reduxjs/toolkit';
+interface IPopularState {
+    loading: boolean,
+    repos: any[],
+    error: null | string
+}
 
-const initialState = {
+const initialState: IPopularState = {
     loading: false,
     repos: [],
     error: null,
 };
 
-const popularSlice: Slice = createSlice({
+const popularSlice: Slice<IPopularState> = createSlice({
     name: 'popular',
     initialState,
     reducers: {
-        getReposLoading(state):void {
+        getReposLoading(state: IPopularState): void {
             state.loading = true;
             state.error = null;
         },
-        getReposSuccess(state, action):void {
+        getReposSuccess(state: IPopularState, action: PayloadAction<any[]>): void {
             state.loading = false;
             state.repos = action.payload;
         },
-        getReposFailure(state, action):void {
+        getReposFailure(state: IPopularState, action: PayloadAction<any[]>): void {
             state.loading = false;
             state.repos = action.payload;
         },
     }
 });
 
-export const { getReposLoading, getReposSuccess, getReposFailure } = popularSlice.actions;
+export const {getReposLoading, getReposSuccess, getReposFailure} = popularSlice.actions;
 export default popularSlice.reducer;
 
