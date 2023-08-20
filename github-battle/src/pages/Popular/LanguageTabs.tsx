@@ -1,6 +1,6 @@
 import {CSSProperties, FC, memo, ReactElement, useEffect} from 'react';
 import {useSearchParams} from 'react-router-dom';
-import {getRepos} from '../../redux/popular/popular.thunk';
+import {getRepos} from '../../redux/popular/popular.requests';
 import {useDispatch} from 'react-redux';
 import {Dispatch} from "redux";
 
@@ -16,7 +16,8 @@ const LanguageTabs: FC<IProps> =
         const [searchParams, setSearchParams] = useSearchParams('lang=All');
         const selectedLanguage: string | null = searchParams.get('lang');
 
-        useEffect(():void => {
+        useEffect(() => {
+            // @ts-ignore
             dispatch(getRepos(selectedLanguage));
         }, [selectedLanguage, dispatch]);
 
